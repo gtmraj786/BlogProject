@@ -7,6 +7,7 @@
 <%@ page import="com.example.springbootproject.pojo.Author" %>
 <%--<jsp:useBean id="listCategory" type="java.util.ArrayList" scope="session" />--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ page import="springdatajpa.pojos.Post" %>--%>
 <%@ page isELIgnored = "false" %>
 <html>

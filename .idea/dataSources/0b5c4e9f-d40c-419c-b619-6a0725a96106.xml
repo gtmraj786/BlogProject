@@ -11,13 +11,13 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>1134</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16393|16395|1
+      <Relations>sequence|table|16857|16859|1
 sequence|table|16805|16807|1
 sequence|table|16850|16852|1
-sequence|table|16857|16859|1
-sequence|table|16637|16639|1
 sequence|table|16702|16704|1
 sequence|table|16691|16693|1
+sequence|table|16637|16639|1
+sequence|table|16393|16395|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">

@@ -184,10 +184,12 @@ public class PostController {
     public  ModelAndView filterByCategory(@PathVariable("cat")String cat,@PathVariable("pageNo")int pag)
     {     ModelAndView mvError=new ModelAndView("error-page");
         LOGGER.info("Find by category");
+        System.out.println(cat);
          Pageable page=PageRequest.of(pag,3);
         Category category;
         try {
              category = serviceCat.findCat(cat);
+            System.out.println("mmm");
         }catch (Exception e)
         {   LOGGER.error("Exception during finding category");
             return mvError;
@@ -309,12 +311,14 @@ public class PostController {
       LOGGER.info("Store  the category into database");
         try {
             serviceCat.save(category);
+
         }catch (Exception e)
         {
+
             return "error-page";
 
         }
-        return "redirect:/home";
+        return "redirect:/home/0";
 
     }
 
@@ -449,7 +453,15 @@ public class PostController {
     {   LOGGER.info("Save Author detail into database");
         String password1=bCryptPasswordEncoder.encode(author.getPassword());
 
-        author.setRole("author");
+       // System.out.println(author.getName());
+
+        if(author.getName().equals("Admin"))
+        {
+            author.setRole("admin");
+        }
+        else {
+            author.setRole("author");
+        }
         author.setPassword(password1);
         try {
             serviceAuthor.save(author);
