@@ -12,11 +12,11 @@
       <IntrospectionStateNumber>1705</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|17151|17153|1
-sequence|table|16702|16704|1
-sequence|table|16691|16693|1
-sequence|table|16637|16639|1
 sequence|table|17514|17516|1
 sequence|table|17507|17509|1
+sequence|table|16637|16639|1
+sequence|table|16691|16693|1
+sequence|table|16702|16704|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">

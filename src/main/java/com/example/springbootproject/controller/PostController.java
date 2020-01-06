@@ -39,12 +39,6 @@ public class PostController {
    @Autowired
    private AuthorService serviceAuthor;
 
-//    @RequestMapping("/login")
-//    public String loginPage()
-//    {
-//        System.out.println("jhjkhk");
-//        return "login";
-//    }
     @RequestMapping("/login")
     public ModelAndView loginPage()
     {  ModelAndView mv=new ModelAndView("login");
@@ -64,12 +58,15 @@ public class PostController {
     {
         return "redirect:/home/0";
     }
+
+
     @RequestMapping("home/{pageNo}")
     public ModelAndView home(@PathVariable("pageNo")int pag)
     {   LOGGER.info("Home page upload...");
         Pageable page=PageRequest.of(pag,3);
          ModelAndView mvError=new ModelAndView("error-page");
         ModelAndView mv = new ModelAndView("home");
+
         List<Category> categoryList;
         try {
              categoryList = serviceCat.listAll();
@@ -78,6 +75,14 @@ public class PostController {
         {  LOGGER.warn("Exception come during fetching list of category");
             return mvError;
         }
+        List<Author> authorList;
+        try {
+            authorList = serviceAuthor.listAll();
+         } catch (Exception e)
+    {  LOGGER.warn("Exception come during fetching list of category");
+        return mvError;
+    }
+        mv.addObject("listAuthor", authorList);
         mv.addObject("listCategory",categoryList);
         List<Post> listPost;
         try {
@@ -86,6 +91,7 @@ public class PostController {
         {   LOGGER.warn("Exception during fetching");
             return mvError;
         }
+
         mv.addObject("listPost", listPost);
         mv.addObject("lastPage",(service.sortByPid(page).size())/3);
         mv.addObject("pageNo",pag);
@@ -184,12 +190,11 @@ public class PostController {
     public  ModelAndView filterByCategory(@PathVariable("cat")String cat,@PathVariable("pageNo")int pag)
     {     ModelAndView mvError=new ModelAndView("error-page");
         LOGGER.info("Find by category");
-        System.out.println(cat);
          Pageable page=PageRequest.of(pag,3);
         Category category;
         try {
              category = serviceCat.findCat(cat);
-            System.out.println("mmm");
+            //System.out.println(category.getName());
         }catch (Exception e)
         {   LOGGER.error("Exception during finding category");
             return mvError;
@@ -198,10 +203,22 @@ public class PostController {
         List<Post> listPost;
         try {
              listPost = service.getByCat(category, page);
+            System.out.println(listPost.get(0).getContent());
         }catch (Exception e)
         {    LOGGER.error("Exception during finding post by category");
             return mvError;
         }
+        List<Category> categoryList;
+
+        try {
+            categoryList = serviceCat.listAll();
+
+        } catch (Exception e)
+        {  LOGGER.warn("Exception come during fetching list of category");
+            return mvError;
+        }
+        mv.addObject("listCategory",categoryList);
+
         mv.addObject("listPost", listPost);
         try {
             mv.addObject("lastPage", (service.sortByPid(page).size()) / 3);
@@ -234,6 +251,15 @@ public class PostController {
         {  LOGGER.error("Exception during finding post by author");
             return mvError;
         }
+        List<Author> authorList;
+        try {
+             authorList = serviceAuthor.listAll();
+        }
+        catch (Exception e)
+        {
+            return mvError;
+        }
+        mv.addObject("listAuthor", authorList);
         mv.addObject("listPost", listPost);
         mv.addObject("lastPage",(service.sortByPid(page).size())/3);
         mv.addObject("pageNo",pag);

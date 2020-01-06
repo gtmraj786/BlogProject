@@ -7,6 +7,8 @@ import com.example.springbootproject.serviceInterface.AuthorServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService implements AuthorServiceInterface
 {   @Autowired
@@ -21,5 +23,11 @@ public class AuthorService implements AuthorServiceInterface
     {
         return repo.findByName(author);
     }
+
+    public List<Author> listAll()
+    {
+        return repo.findAll();
+    }
+
 
 }

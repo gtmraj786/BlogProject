@@ -5,6 +5,7 @@
 <%@ page import="org.springframework.security.core.userdetails.UserDetails" %>
 <%@ page import="com.example.springbootproject.pojo.Category" %>
 <%@ page import="com.example.springbootproject.pojo.Author" %>
+
 <%--<jsp:useBean id="listCategory" type="java.util.ArrayList" scope="session" />--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -31,6 +32,25 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/home/0">Home</a></li>
+                <security:authorize access="isAuthenticated()">
+                    <%
+
+                        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                        String username="";
+                        String authorities="";
+                        if (principal instanceof UserDetails) {
+                            username = ((UserDetails)principal).getUsername();
+                            authorities= String.valueOf(((UserDetails) principal).getAuthorities());
+                        } else {
+                            username= principal.toString();
+                        }
+                        if(authorities.equals("[admin]") || authorities.equals("[author]") )                   {
+                    %>
+                    <li><a href="#"><%=username%></a></li>
+                    <%
+                        }
+                    %>
+                </security:authorize>
                 <li><a href="/addPost">Create Post</a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sort By<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -56,27 +76,36 @@
 <%--                        %>--%>
 <%--                        <li><a href="/filterBy/<%=c.getName()%>/0"><%=c.getName()%></a></li>--%>
 <%--                        <%}%>--%>
+
+<c:forEach items="${listCategory}" var="cat">
+
+    <li><a href="/filterBy/${cat.getName()}/0">${cat.getName()}</a></li>
+</c:forEach>
+
+
 <%--    <c:forEach items="${listCategory}" var="cat">--%>
 <%--        <li><a href="/filterBy/${cat.name}/0">${cat.name}</a></li>--%>
 <%--    </c:forEach>--%>
-<%--                       <li><a href="/filterBy/Sport/0">Sport</a></li>--%>
-                        <li><a href="/filterBy/Sport/0">Sport</a></li>
-                        <li><a href="/filterBy/Cricket/0">Cricket</a></li>
-                        <li><a href="/filterBy/Science/0">Science</a></li>
-                        <li><a href="/filterBy/Social/0">Social</a></li>
-                         <li><a href="/filterBy/Drama/0">Drama</a></li>
-                         <li><a href="/filterBy/Country/0">Country</a></li>
+
+<%--                        <li><a href="/filterBy/Sport/0">Sport</a></li>--%>
+<%--                        <li><a href="/filterBy/Cricket/0">Cricket</a></li>--%>
+<%--                        <li><a href="/filterBy/Science/0">Science</a></li>--%>
+<%--                        <li><a href="/filterBy/Social/0">Social</a></li>--%>
+<%--                         <li><a href="/filterBy/Drama/0">Drama</a></li>--%>
+<%--                         <li><a href="/filterBy/Country/0">Country</a></li>--%>
                     </ul>
                 </li>
 
 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Author<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/filterByAuthor/Gautam/0">Gautam</a></li>
-                        <li><a href="/filterByAuthor/Navin/0">Navin</a></li>
-                        <li><a href="/filterByAuthor/Amit/0">Amit</a></li>
-                        <li><a href="/filterByAuthor/Aditya/0">Aditya</a></li>
-                        <li><a href="/filterByAuthor/Shivam/0">Shivam</a></li>
+
+                        <c:forEach items="${listAuthor}" var="author">
+
+<%--                            <li><a href="/filterBy/${cat.getName()}/0">${cat.getName()}</a></li>--%>
+                            <li><a href="/filterByAuthor/${author.name}/0">${author.name}</a></li>
+                        </c:forEach>
+
                     </ul>
                 </li>
                 <security:authorize access="isAuthenticated()">
@@ -113,8 +142,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
 <%--                <li><a href="/logout">Logout</a></li>--%>
+                  <security:authorize access="!isAuthenticated()">
                 <li><a href="/addAuthor"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-
+                 </security:authorize>
 
 
                 <security:authorize access="isAuthenticated()">
@@ -151,7 +181,7 @@ Content:
 <%=post.getContent()%><br>
 CreatedAt:<%=post.getCreatedAt()%><br>
 UpdatedAt:<%=post.getUpdatedAt()%><br>
-Author:<%=post.getAuthor().getName()%>
+Author:<span style="color:blue;"><%=post.getAuthor().getName()%></span>
 
 
 <br>
