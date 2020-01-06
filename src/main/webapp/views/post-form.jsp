@@ -24,7 +24,7 @@
 
 
 
-      <br>Title <form:input path="content"/><br>
+      <br>Content <form:input path="content"/><br>
         <input type="submit" value="publish">
 
 

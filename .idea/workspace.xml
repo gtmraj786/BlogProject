@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e2bd0c8-9b86-4382-a34b-78dd11679210" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b5c4e9f-d40c-419c-b619-6a0725a96106.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b5c4e9f-d40c-419c-b619-6a0725a96106.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b5c4e9f-d40c-419c-b619-6a0725a96106/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b5c4e9f-d40c-419c-b619-6a0725a96106/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c2d4fb8-b28c-416e-b71a-031c9b7c1c3c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c2d4fb8-b28c-416e-b71a-031c9b7c1c3c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3aaed44a-7163-4da3-99fb-89e76a731f61.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3aaed44a-7163-4da3-99fb-89e76a731f61.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/749de394-8ed8-42fc-a184-97ddd4d22602.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/749de394-8ed8-42fc-a184-97ddd4d22602.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a2ae6cfa-2b3c-4ab1-80fe-55b44eea6f13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a2ae6cfa-2b3c-4ab1-80fe-55b44eea6f13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a482ca45-17b1-4af7-b020-ed8f46a07705.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a482ca45-17b1-4af7-b020-ed8f46a07705/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a482ca45-17b1-4af7-b020-ed8f46a07705/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a482ca45-17b1-4af7-b020-ed8f46a07705/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a482ca45-17b1-4af7-b020-ed8f46a07705/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f3e3a360-272d-4209-9962-f3ac2d474698.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f3e3a360-272d-4209-9962-f3ac2d474698.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/repository/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/repository/AuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/service/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/springbootproject/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/springbootproject/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/post-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/post-form.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +213,7 @@
       <workItem from="1578247550364" duration="1519000" />
       <workItem from="1578285787547" duration="12767000" />
       <workItem from="1578323839220" duration="1386000" />
-      <workItem from="1578329018231" duration="5224000" />
+      <workItem from="1578329018231" duration="5909000" />
     </task>
     <servers />
   </component>
